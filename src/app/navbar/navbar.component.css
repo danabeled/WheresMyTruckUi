@@ -1,0 +1,39 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+    box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  }
+  
+  .fill-space {
+    flex: 1 1 auto;
+  }
+
+  
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+
+  .controls {
+    background: #3f51b5;
+    height: 3%;
+    width: 70%;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: white;
+  }
+  
+::placeholder {  
+  color: white;
+}

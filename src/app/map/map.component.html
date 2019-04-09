@@ -1,0 +1,26 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="mapLat" [longitude]="mapLng" [zoom]="zoom" (mapReady)="mapReady($event)" [mapTypeControl]="true">
+  <button mat-raised-button id="Refresh-Trucks-Button" (click)='loadTrucks()'>Refresh Map</button>
+    <button mat-raised-button id="Move-You-Button" (click)='moveYou()'>Move You Marker</button>
+    <input  matInput class="controls" [(ngModel)]="newTruck.name" 
+            id="new-truck-input" placeholder="Report a truck at your location..."/>
+    <button id="Report-Button" mat-raised-button (click)="reportTruck()" class="submit">Report</button>
+      <agm-marker [latitude]="lat" [longitude]="lng" openInfoWindow=true label="YOU"></agm-marker>
+      <!--<agm-marker-cluster imagePath="assets/images/truck_cluster32">-->
+      <agm-marker-cluster [styles]="clusterStyles">
+      <agm-marker *ngFor="let truck of trucks" [latitude]="truck.lat" [longitude]="truck.lon" iconUrl="assets/images/truckpin.png" openInfoWindow=false>
+        <agm-info-window>
+          <h3>{{truck.name}}</h3>
+          <p>Is reported here by {{truck.Here}} people</p>
+          <p>Is reported not here by {{truck.NotHere}} people</p>
+          <button mat-raised-button color="primary" (click)="reportHere(truck)" [disabled]="truckIsVoted(truck)">Here!</button>
+          <button mat-raised-button color="warn" (click)="reportNotHere(truck)" [disabled]="truckIsVoted(truck)">Not Here :(</button>
+        </agm-info-window>
+      </agm-marker>
+    </agm-marker-cluster>
+  </agm-map>
+  
+    
+  <!-- Can remove credit if purchase from FLATICON ~80USD per year -->
+  <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
