@@ -20,7 +20,7 @@ export class ActiveTruckService {
 
   reportHere(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/trucks/here';
+    '/api/report/here';
     console.log(truck);
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
@@ -30,7 +30,7 @@ export class ActiveTruckService {
 
   reportNewTruck(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/trucks';
+    '/api/trucks/new';
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
       console.log(result)
@@ -39,7 +39,7 @@ export class ActiveTruckService {
   
   reportNotHere(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/trucks/nothere';
+    '/api/report/nothere';
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
       console.log(result)
