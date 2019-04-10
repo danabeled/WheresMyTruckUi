@@ -72,14 +72,14 @@ export class ActiveTruckService {
         for(let i=0; i<result.length; i++){
           let offset = 0;
           for(let j=0; j< trucks.length; j++){
-            while((result[i].lat - offset) == trucks[j].lat && (offset - result[i].lon) == (trucks[j].lon))
+            while((result[i].loc.coordinates[1] - offset) == trucks[j].lat && (offset - result[i].loc.coordinates[0]) == (trucks[j].lon))
             {
               offset = offset + .00002
               j=0;
             }
           }
-            var newTruck = new FoodTruck(result[i].name, result[i].lat - offset,
-                offset - result[i].lon);
+            var newTruck = new FoodTruck(result[i].name, result[i].loc.coordinates[1] - offset,
+                result[i].loc.coordinates[0] - offset);
 
             trucks.push(newTruck);
             console.log(trucks);
