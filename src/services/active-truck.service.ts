@@ -16,7 +16,7 @@ export class ActiveTruckService {
     })
   };
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://35.168.54.90:8000'
+  baseUrl: string = 'http://localhost:8081'
 
   reportHere(truck: FoodTruck){
     let url: string = this.baseUrl +
@@ -47,7 +47,7 @@ export class ActiveTruckService {
   }
   
   getTruckCounts(trucks: Array<FoodTruck>): Array<FoodTruck>{
-    let url: string =  this.baseUrl + `/truckAllCounts`;
+    let url: string =  this.baseUrl + `/api/trucks/all`;
     
     this.http.get(url).subscribe((result: any) =>
     {
@@ -65,7 +65,7 @@ export class ActiveTruckService {
   }
   getTrucks(): Array<FoodTruck>{
     let trucks = new Array<FoodTruck>();
-    let url: string =  this.baseUrl + `/trucks`;
+    let url: string =  this.baseUrl + `/api/trucks/all`;
     
     this.http.get(url).subscribe((result: any) =>
     {
