@@ -19,13 +19,15 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    MenuComponent
   ],
   exports: [
     AppComponent,
