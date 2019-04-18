@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FoodTruck } from 'src/app/foodtruck';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,12 @@ export class ActiveTruckService {
     })
   };
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://localhost:8081'
+
+  baseUrl: string = environment.url + '/api';
 
   reportHere(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/api/report/here';
+    '/report/here';
     console.log(truck);
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
@@ -30,7 +32,7 @@ export class ActiveTruckService {
 
   reportNewTruck(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/api/trucks/new';
+    '/trucks/new';
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
       console.log(result)
@@ -39,7 +41,7 @@ export class ActiveTruckService {
   
   reportNotHere(truck: FoodTruck){
     let url: string = this.baseUrl +
-    '/api/report/nothere';
+    '/report/nothere';
     let t = JSON.stringify(truck);
     this.http.post(url, t, this.httpOptions).subscribe((result: any) => {
       console.log(result)
@@ -47,7 +49,7 @@ export class ActiveTruckService {
   }
   
   getTruckCounts(trucks: Array<FoodTruck>): Array<FoodTruck>{
-    let url: string =  this.baseUrl + `/api/trucks/all`;
+    let url: string =  this.baseUrl + `/trucks/all`;
     
     this.http.get(url).subscribe((result: any) =>
     {
@@ -65,7 +67,7 @@ export class ActiveTruckService {
   }
   getTrucks(): Array<FoodTruck>{
     let trucks = new Array<FoodTruck>();
-    let url: string =  this.baseUrl + `/api/trucks/all`;
+    let url: string =  this.baseUrl + `/trucks/all`;
     
     this.http.get(url).subscribe((result: any) =>
     {

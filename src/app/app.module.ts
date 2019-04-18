@@ -12,7 +12,7 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule,  } from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule, MatExpansionModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { AppRoutingModule }     from './app-routing.module';
@@ -51,6 +51,7 @@ import { MenuComponent } from './menu/menu.component';
     AgmJsMarkerClustererModule,
     HttpClientModule,
     MatAutocompleteModule,
+    MatExpansionModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     })
