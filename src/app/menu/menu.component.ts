@@ -10,7 +10,7 @@ export class MenuComponent implements OnInit {
 
   constructor(private MenuService: MenuService){}
   menus;
-  img;
+  
   ngOnInit() {
     this.MenuService.getTrucksWithMenus().subscribe((result) =>
     {
@@ -18,7 +18,15 @@ export class MenuComponent implements OnInit {
       console.log(this.menus);
       for(let i=0; i<this.menus.length; i++)
       {
-        this.img = btoa(String.fromCharCode.apply(null, this.menus[0].img.data.data));
+        if(this.menus[i].img == undefined)
+        {
+          this.menus[i].imgbuffed = "";
+
+        }
+        else{
+          this.menus[i].imgbuffed = btoa(String.fromCharCode.apply(null, this.menus[i].img.data.data));
+
+        }
       }
     });
   }
