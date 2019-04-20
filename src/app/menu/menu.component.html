@@ -2,6 +2,7 @@
   <mat-expansion-panel-header>
     {{menu.truck}}
   </mat-expansion-panel-header>
+  <img src="data:image/png;base64,{{menu.img}}">
   <ul>
     <li *ngFor="let item of menu.items">{{item.name}} - ${{item.price}}</li>
   </ul>
