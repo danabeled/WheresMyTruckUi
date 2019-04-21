@@ -74,7 +74,7 @@ export class ActiveTruckService {
         for(let i=0; i<result.length; i++){
           let offset = 0;
           for(let j=0; j< trucks.length; j++){
-            while((result[i].loc.coordinates[1] - offset) == trucks[j].lat && (offset - result[i].loc.coordinates[0]) == (trucks[j].lon))
+            while((result[i].loc.coordinates[1] - offset) == trucks[j].lat && (offset - result[i].loc.coordinates[0]) == (0 - trucks[j].lon))
             {
               offset = offset + .00002
               j=0;
