@@ -16,6 +16,9 @@ export class MenuComponent implements OnInit {
   reportNewItem(index){
     console.log(index);
     console.log(this.newItems[index]);
+    this.menus[index].items.push({
+      name: this.newItems[index].name, 
+      price: this.newItems[index].price})
     console.log("New Item Reported");
     this.MenuService.postNewMenuItem(this.newItems[index]).subscribe((result) =>{
       console.log(result);
