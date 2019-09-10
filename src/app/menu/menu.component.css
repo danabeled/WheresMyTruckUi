@@ -1,0 +1,10 @@
+.example-card {
+    max-width: 400px;
+    display:inline-block;
+    height: 800px;
+    max-height: 800px;
+  }
+
+.card-input {
+    max-width: 100px;
+}

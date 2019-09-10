@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatListModule, MatExpansionModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { AboutComponent } from './about/about.component';
@@ -52,6 +53,7 @@ import { MenuComponent } from './menu/menu.component';
     HttpClientModule,
     MatAutocompleteModule,
     MatExpansionModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     })
