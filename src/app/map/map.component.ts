@@ -65,7 +65,7 @@ export class MapComponent implements OnInit {
 
     reportTruck(){
       this.newTruck.lat = this.lat;
-      this.newTruck.lon = 0 - this.lng;
+      this.newTruck.lon = this.lng;
       this.ActiveTruckService.reportNewTruck(this.newTruck);
       this.newTruck.lon = this.lng;
       this.trucks.push(this.newTruck);
