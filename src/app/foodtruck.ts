@@ -3,30 +3,30 @@ export class FoodTruck {
     name: string;
     lat: number;
     lon: number;
-    Here: number;
-    NotHere: number;
+    here: number;
+    notHere: number;
     
     constructor(inputName: string, inputLat: number, inputLong: number) { 
         this.name = inputName; 
         this.lat = inputLat;
         this.lon = inputLong;
-        this.Here = 0;
-        this.NotHere = 0;
+        this.here = 0;
+        this.notHere = 0;
     }
 
     setHere(here: number){
-        this.Here = here;
+        this.here = here;
     }
 
     setNotHere(notHere: number){
-        this.NotHere = notHere;
+        this.notHere = notHere;
     }
     
     reportHere(){
-        this.Here = this.Here + 1;
+        this.here = this.here + 1;
     }
 
     reportNotHere(){
-        this.NotHere = this.NotHere + 1;
+        this.notHere = this.notHere + 1;
     }
 }

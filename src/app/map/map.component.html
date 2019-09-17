@@ -12,8 +12,8 @@
       <agm-marker *ngFor="let truck of trucks" [latitude]="truck.lat" [longitude]="truck.lon" iconUrl="assets/images/truckpin.png" openInfoWindow=false>
         <agm-info-window>
           <h3>{{truck.name}}</h3>
-          <p>Is reported here by {{truck.Here}} people</p>
-          <p>Is reported not here by {{truck.NotHere}} people</p>
+          <p>Is reported here by {{truck.here}} people</p>
+          <p>Is reported not here by {{truck.notHere}} people</p>
           <button mat-raised-button color="primary" (click)="reportHere(truck)" [disabled]="truckIsVoted(truck)">Here!</button>
           <button mat-raised-button color="warn" (click)="reportNotHere(truck)" [disabled]="truckIsVoted(truck)">Not Here :(</button>
         </agm-info-window>
